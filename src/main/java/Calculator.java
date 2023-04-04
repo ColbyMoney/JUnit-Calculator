@@ -1,29 +1,31 @@
 public class Calculator {
-    public int add(int a, int b) {
+    public static int add(int a, int b) {
         return a + b;
     }
 
-    public int subtract(int a, int b) {
+    public static int subtract(int a, int b) {
         return a - b;
     }
 
-    public int multiply(int a, int b) {
+    public static int multiply(int a, int b) {
         return a * b;
     }
 
-    public double divide(int a, int b) {
-        return (double)a / (double)b;
+    public static int divide(int a, int b) {
+        try {
+            return a / b;
+        }
+        catch(ArithmeticException e) {
+            System.out.println("Cannot divide by 0. Returning dividend value.");
+            return a;
+        }
     }
 
-    public int power(int a, int b) {
-        return a ^ b;
+    public static int power(int a, int b) {
+        return (int)Math.pow(a, b);
     }
 
-    public int square(int a) {
-        return a * a;
-    }
-
-    public double squareRoot(int a) {
-        return Math.sqrt((double)a);
+    public static int remainder(int a, int b) {
+        return a % b;
     }
 }
